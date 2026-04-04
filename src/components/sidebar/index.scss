@@ -1,222 +1,209 @@
 .nav-bar {
-    background: #5f0c96;
-    width: 60px;
-    height: 100%;
+  background: #5f0c96;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  min-height: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+  .logo {
+    display: block;
+    padding: 10px 0;
+
+    img {
+      display: block;
+      margin: 8px auto;
+      width: 44px;
+      height: auto;
+
+      &.sub-logo {
+        display: block;
+        margin-top: 20px;
+        width: 60px;
+      }
+    }
+  }
+
+  nav {
+    display: block;
+    text-align: center;
     position: absolute;
+    height: 210px;
+    top: 50%;
+    margin-top: -120px;
+    width: 100%;
+
+    a {
+      font-size: 24px;
+      color: #ffffff;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+
+      i { transition: all 0.3s ease-out; }
+
+      &:hover {
+        color: #fbff00;
+        svg { opacity: 0; }
+        &:after { opacity: 1; }
+      }
+
+      &:after {
+        content: '';
+        font-size: 12px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+
+      &:first-child:after { content: 'HOME'; }
+    }
+
+    a.about-link:after     { content: 'ABOUT'; }
+    a.contact-link:after   { content: 'CONTACT'; }
+    a.portfolio-link:after { content: 'PORTFOLIO'; }
+
+    a.active svg { color: #ffffff; }
+  }
+
+  ul {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+    li {
+      a {
+        padding: 7px 0;
+        display: block;
+        font-size: 15px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+
+      &:hover .anchor-icon { color: #f5e105; }
+    }
+  }
+}
+
+.hamburger-icon,
+.close-icon {
+  display: none;
+}
+
+/* ── Mobile ── */
+@media screen and (max-width: 1200px) {
+
+  .nav-bar {
+    background: #5f0c96;      /* keep purple — never transparent */
+    position: fixed;           /* stick to top always */
     top: 0;
-    z-index: 3;
-    min-height: 500px;
-    
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  
+    left: 0;
+    width: 100%;
+    height: 50px;
+    min-height: unset;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+
     .logo {
       display: block;
-      padding: 10px 0;
-  
+      padding: 0 10px;
+
       img {
-        display: block;
-        margin: 8px auto;
-        width: 44px;
-        height: auto;
-  
-        &.sub-logo {
-          display: block;
-          margin-top: 20px;
-          width: 60px;
-        }
-      }
-    }
-  
-    nav {
-      display: block;
-      text-align: center;
-      position: absolute;
-      height: 210px;
-      top: 50%;
-      margin-top: -120px;
-      width: 100%;
-  
-      a {
-        font-size: 24px;
-        color: #ffffff;
-        display: block;
-        line-height: 51px;
-        height: 51px;
-        position: relative;
-        text-decoration: none;
-  
-        i {
-          transition: all 0.3s ease-out;
-        }
-  
-        &:hover {
-          color: #fbff00;
-  
-          svg {
-            opacity: 0;
-          }
-  
-          &:after {
-            opacity: 1;
-          }
-        }
-  
-        &:after {
-          content: '';
-          font-size: 12px;
-          letter-spacing: 2px;
-          position: absolute;
-          bottom: 0;
-          display: block;
-          width: 100%;
-          text-align: center;
-          opacity: 0;
-          -webkit-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out;
-        }
-  
-        &:first-child {
-          &:after {
-            content: 'HOME';
-          }
-        }
-      }
-  
-      a.about-link {
-        &:after {
-          content: 'ABOUT';
-        }
-      }
-  
-      a.contact-link {
-        &:after {
-          content: 'CONTACT';
-        }
-      }
-  
-      a.portfolio-link {
-        &:after {
-          content: 'PORTFOLIO';
-        }
-      }
-  
-      a.active {
-        svg {
-          color: #ffffff;
-        }
-      }
-    }
-  
-    ul {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      display: block;
-      padding: 0;
-      list-style: none;
-      text-align: center;
-      margin: 0;
-  
-      li {
-        a {
-          padding: 7px 0;
-          display: block;
-          font-size: 15px;
-          line-height: 16px;
-          color: #ffffff;
-        }
-  
-        &:hover {
-          .anchor-icon {
-            color: #f5e105;
-          }
-        }
-      }
-    }
-  }
-  
-  .hamburger-icon, .close-icon {
-    display: none;
-  }
-  
-  
-  @media screen and (max-width: 1200px) {
-    .nav-bar { 
-      background:  transparent;
-      position: initial;
-      height: 50px;
-      min-height: auto;
-      box-shadow: none;
-
-
-      .logo{
-        display: block;
-        padding: 5px ;
-      }
-      .logo img {
-        position: relative;
-        margin: 8px auto;
-        width: 30px;
-        height: 30px;
-      }
-       ul, nav {
-        display: none;
-       }
-  
-       nav {
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: #000000;
-        height: 100%;
+        width: 32px;
+        height: 32px;
         margin: 0;
-        z-index: 2;
-        position: fixed;
-  
-        &.mobile-show {
-          display: block;
-        }
-  
-        a {
-          margin-top: 5%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-  
-        a:after {
+      }
+
+      img.sub-logo { display: none; }
+    }
+
+    /* Social icons hidden on mobile */
+    ul { display: none; }
+
+    /* Nav hidden by default, shown when hamburger pressed */
+    nav {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.96);
+      z-index: 11;
+      margin: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.mobile-show {
+        display: flex;
+      }
+
+      a {
+        font-size: 20px;
+        margin: 16px 0;
+        height: auto;
+        line-height: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        color: #fff;
+
+        &:after {
           opacity: 1;
           position: initial;
           width: auto;
-          margin-left: 10PX;
+          font-size: 16px;
+          letter-spacing: 3px;
         }
-  
-        a svg {
-          opacity: 1 !important;
-        }
-       }
 
-       
-  
-       .hamburger-icon,
-       .close-icon {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          display: block;
-          color: #000000;
-          font-size: 25px;
-       }
+        svg { opacity: 1 !important; }
+      }
     }
-    
-  }
-  @media screen and (max-width: 1200px) {
-    .nav-bar .logo img.sub-logo {
-      display: none;
+
+    .hamburger-icon {
+      display: block;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 22px;
+      cursor: pointer;
+      color: #ffffff;
+      z-index: 12;
+    }
+
+    .close-icon {
+      display: block;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #ffffff;
+      z-index: 12;
     }
   }
 
-  
-  
- 
-  
+  /* Push page content down on mobile so nav doesn't overlap */
+  .App .page {
+    padding-top: 50px !important;
+  }
+}

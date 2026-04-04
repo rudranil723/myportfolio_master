@@ -115,7 +115,7 @@ const Sidebar = () => {
       <FontAwesomeIcon 
           onClick={() => setShowNav(true)}
           icon={faBars}
-          color="#0000"
+          color="#ffffff"
           className='hamburger-icon' />
     </div>
   )
