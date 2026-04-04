@@ -1,0 +1,295 @@
+.about-page {
+  padding: 60px 50px 40px 90px;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  /* ── Top row: text + atom side by side ── */
+  .about-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  /* ── Text zone ── */
+  .text-zone {
+    flex: 1;
+    min-width: 0;
+    max-width: 50%;
+
+    h1 {
+      font-size: 52px;
+      font-family: 'Coolvetica';
+      color: #ffd700;
+      font-weight: 400;
+      margin: 0 0 8px;
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 15px;
+        position: absolute;
+        top: -16px;
+        left: 0;
+        opacity: 0.5;
+        color: #ffd700;
+      }
+      &::after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 15px;
+        position: absolute;
+        bottom: -18px;
+        left: 0;
+        opacity: 0.5;
+        color: #ffd700;
+      }
+    }
+
+    p {
+      color: #ccc;
+      font-family: sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin: 10px 0 0;
+
+      &:first-of-type { margin-top: 30px; }
+    }
+
+    .highlight {
+      color: #ffd700;
+      font-weight: 400;
+    }
+  }
+
+  /* ── Resume button ── */
+  .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 10px 24px;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.25s, color 0.25s;
+
+    &:hover {
+      background: #ffd700;
+      color: #000;
+    }
+  }
+
+  /* ── Atom section ── */
+  .atom-section {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .atom-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    flex-shrink: 0;
+
+    .atom-svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* ── Stats bar ── */
+  .stats-bar {
+    display: flex;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+
+    .stat-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px 12px;
+      border-right: 1px solid rgba(255, 215, 0, 0.1);
+      transition: background 0.25s;
+
+      &:last-child { border-right: none; }
+      &:hover { background: rgba(255, 215, 0, 0.04); }
+
+      .stat-value {
+        font-family: 'Coolvetica';
+        font-size: 28px;
+        color: #ffd700;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-family: sans-serif;
+        font-size: 10px;
+        color: #666;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        text-align: center;
+      }
+    }
+  }
+
+  /* ── Timeline ── */
+  .timeline-section {
+    .section-title {
+      font-family: 'Coolvetica';
+      font-size: 26px;
+      color: #fff;
+      font-weight: 400;
+      margin: 0 0 24px;
+      position: relative;
+      padding-left: 14px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 4px;
+        bottom: 4px;
+        width: 3px;
+        background: #ffd700;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 26px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: rgba(255, 215, 0, 0.2);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+
+    &:last-child { margin-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -23px;
+      top: 5px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ffd700;
+      border: 2px solid #000;
+      box-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+    }
+
+    .timeline-content {
+      .timeline-year {
+        font-family: 'La Belle Aurore', cursive;
+        font-size: 13px;
+        color: #ffd700;
+        opacity: 0.7;
+      }
+
+      h3 {
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 3px 0 5px;
+      }
+
+      p {
+        color: #777;
+        font-family: sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  /* ── Footer ── */
+  .made-with {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    margin-top: auto;
+  }
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 1200px) {
+  .about-page {
+    padding: 50px 20px 30px 20px;
+    gap: 30px;
+
+    .about-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .text-zone {
+      max-width: 100%;
+
+      h1::before,
+      h1::after { display: none; }
+
+      p:first-of-type { margin-top: 20px; }
+
+      .resume-btn {
+        margin: 20px auto 0;
+        display: inline-flex;
+      }
+    }
+
+    .atom-wrapper {
+      width: 280px;
+      height: 280px;
+    }
+
+    .stats-bar {
+      flex-wrap: wrap;
+
+      .stat-item {
+        flex: 1 1 45%;
+        &:nth-child(2) { border-right: none; }
+        &:nth-child(3),
+        &:nth-child(4) {
+          border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+      }
+    }
+  }
+}
