@@ -293,6 +293,22 @@ $optionDefaultColours: #ED5565,#FC6E51,#FFCE54,#2ECC71,#5D9CEC,#AC92EC;
    }
 }
 
+.secondary-btn {
+  margin-left: 16px;
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.secondary-btn:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.right-container .options .option {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 
 @media screen and (max-width: 1200px) {
    .right-container {

@@ -36,3 +36,28 @@ textarea{
   animation: fadeOut 1s 1s;
   animation-fill-mode: forwards;
 }
+
+.page-loader {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1f2937, #0f172a 55%, #020617 100%);
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-content h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+  color: #fffb00;
+  letter-spacing: 4px;
+}
+
+.loader-content p {
+  color: #fffb00;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
