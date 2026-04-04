@@ -12,20 +12,26 @@ function App() {
   const [showPreloader, setShowPreloader] = useState(true)
 
   return (
-    <>
-      {showPreloader && <Preloader onEnter={() => setShowPreloader(false)} />}
-
-      {!showPreloader && (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="portfolio" element={<Portfolio />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-        </Routes>
-      )}
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={<Layout showPreloader={showPreloader} />}
+      >
+        <Route
+          index
+          element={
+            showPreloader ? (
+              <Preloader onEnter={() => setShowPreloader(false)} />
+            ) : (
+              <Home />
+            )
+          }
+        />
+        <Route path="about" element={<About />} />
+        <Route path="portfolio" element={<Portfolio />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+    </Routes>
   )
 }
 

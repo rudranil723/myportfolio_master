@@ -9,7 +9,7 @@ const Preloader = ({ onEnter }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHint(true)
-    }, 1200)
+    }, 900)
 
     return () => clearTimeout(timer)
   }, [])
@@ -19,17 +19,11 @@ const Preloader = ({ onEnter }) => {
 
     setTimeout(() => {
       onEnter()
-    }, 1700)
+    }, 1600)
   }
 
   return (
     <div className={`rocket-preloader ${isLaunching ? 'launching' : ''}`}>
-      <div className="stars stars-one"></div>
-      <div className="stars stars-two"></div>
-      <div className="stars stars-three"></div>
-      <div className="nebula nebula-one"></div>
-      <div className="nebula nebula-two"></div>
-
       <div className="preloader-content">
         <p className="small-tag">WELCOME TO MY UNIVERSE</p>
         <h1>Rudranil Portfolio</h1>
@@ -44,16 +38,20 @@ const Preloader = ({ onEnter }) => {
           <div className="rocket-flame flame-outer"></div>
         </div>
 
-        <button className="launch-btn" onClick={handleLaunch} disabled={isLaunching}>
+        <button
+          className="launch-btn"
+          onClick={handleLaunch}
+          disabled={isLaunching}
+        >
           {isLaunching ? 'Launching...' : 'Launch Portfolio'}
         </button>
 
         <p className={`enter-hint ${showHint ? 'visible' : ''}`}>
           Press the button to enter
         </p>
-      </div>
 
-      <div className="screen-flash"></div>
+        <div className="screen-flash"></div>
+      </div>
     </div>
   )
 }

@@ -1,34 +1,26 @@
-import React from 'react';
-import Sidebar from '../sidebar';
-import './index.scss';
-import { Outlet } from 'react-router-dom';
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import Sidebar from '../sidebar'
+import './index.scss'
 
-const Layout = () => {
+const Layout = ({ showPreloader = false }) => {
   return (
-    <div className='App'>
-      <Sidebar />
-      <div className="page" style={{ backgroundColor: '#000000' }}>
-        
+    <div className="page">
+      {!showPreloader && <Sidebar />}
+
       <div id="space">
-        <div class="stars"></div>
-        <div class="stars"></div>
-        <div class="stars"></div>
-        <div class="stars"></div>
-        <div class="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
+        <div className="stars"></div>
       </div>
 
-        <span className='tags top-tags'>&lt;body&gt;</span> 
-
+      <div className={showPreloader ? 'preloader-page' : 'container'}>
         <Outlet />
-
-        <span className='tags bottom-tags'>
-          &lt;/body&gt;
-          <br />
-          <span className='bottom-tag-html'>&lt;/html&gt;</span>
-        </span>
       </div>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

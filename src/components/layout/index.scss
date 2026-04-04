@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    background: #000;
 }
 
 .top-tags{
@@ -106,3 +107,39 @@
   }
 }
 
+.preloader-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container,
+.preloader-page {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+#space {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  z-index: 0;
+}
