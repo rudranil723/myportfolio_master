@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHtml5, faCss3, faReact, faJsSquare, faGitAlt,
-  faPython, faNodeJs
-} from '@fortawesome/free-brands-svg-icons';
+// import {
+//   faHtml5, faCss3, faReact, faJsSquare, faGitAlt,
+//   faPython, faNodeJs
+// } from '@fortawesome/free-brands-svg-icons';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
@@ -53,10 +53,10 @@ const orbitConfig = [
 ];
 
 // Full icon names for tooltip
-const labelMap = {
-  Re: 'React', Py: 'Python', HT: 'HTML5',
-  CS: 'CSS3',  JS: 'JS',    Gi: 'Git',  No: 'Node',
-};
+// const labelMap = {
+//   Re: 'React', Py: 'Python', HT: 'HTML5',
+//   CS: 'CSS3',  JS: 'JS',    Gi: 'Git',  No: 'Node',
+// };
 
 const Atom = () => {
   const [, forceUpdate] = useState(0);
